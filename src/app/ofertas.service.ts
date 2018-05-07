@@ -1,7 +1,7 @@
 import { Http } from '@angular/http'
 import { Injectable } from '@angular/core'
 import { Oferta } from './shared/oferta.model'
-
+import 'rxjs/add/operator/toPromise'
 @Injectable()
 
 export class OfertasService {
@@ -10,10 +10,8 @@ export class OfertasService {
     
     
     public getOfertas(): Promise<Oferta[]> {
-        return this.ofertas
-        //efetuar uma requisição http
-        this.http.get()
-        //retornar promise oferta[]
+       return this.http.get('http://localhost:3000/ofertas?destaque=true')
+            .toPromise()
+            .then((resposta:any)=> resposta.json())
     }
-    
 }
