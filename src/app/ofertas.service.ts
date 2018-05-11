@@ -27,9 +27,9 @@ export class OfertasService {
 
     public getOfertasPorId(id:number): Promise<Oferta>{
         return this.http.get(`${URL_API}?id=${id}`)
-        .toPromise()
-        .then((resposta:any)=>{
-          return  resposta.json()[0] 
+            .toPromise()
+            .then((resposta:any)=>{
+            return  resposta.json()[0] 
         })
     }
 
