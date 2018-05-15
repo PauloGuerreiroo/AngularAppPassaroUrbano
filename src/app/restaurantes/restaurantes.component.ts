@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Oferta } from '../shared/oferta.model';
+import { Oferta } from '../shared/oferta.model'
 import { OfertasService } from '../ofertas.service'
 
 @Component({
@@ -16,9 +16,9 @@ export class RestaurantesComponent implements OnInit {
 
   ngOnInit() {
     this.ofertasService.getOfertasPorCategoria('restaurante')
-    .then((ofertas: Oferta[])=>{
-      this.ofertas=ofertas
-    })
+      .then(( ofertas: Oferta[] ) => {
+        this.ofertas = ofertas
+      })
   }
 
 }
